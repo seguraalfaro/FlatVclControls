@@ -186,3 +186,29 @@ llegó en 10.4.2. La pastilla no tiene ese problema: es estática.
 ## Licencia
 
 MIT. Ver [LICENSE](LICENSE).
+
+Conviene leer los dos párrafos en mayúsculas del final de esa licencia, que son
+los que la gente salta. Dicen que el software se entrega **tal cual**, sin
+garantía de ninguna clase —ni de que sirva para algo, ni de que no infrinja
+nada— y que el autor no responde por ningún daño que se derive de usarlo. Es
+justo lo que corresponde a un proyecto sin mantenimiento: quien lo instale en
+producción lo hace bajo su propio criterio y su propia responsabilidad.
+
+## Reconocimientos y marcas
+
+Todo el código de este repositorio es obra original del autor. No incorpora
+código de terceros.
+
+Delphi, RAD Studio, la VCL y Embarcadero son marcas registradas de Embarcadero
+Technologies, Inc. **Este proyecto no está afiliado a Embarcadero, ni
+patrocinado ni respaldado por ellos**, y no es un producto oficial suyo. Se las
+nombra únicamente para indicar con qué herramienta y con qué biblioteca funciona
+este código, que es un uso descriptivo.
+
+Aquí no se redistribuye nada de Embarcadero: ni código fuente de la VCL o de la
+RTL, ni unidades compiladas (`.dcu`), ni paquetes (`.dcp`, `.bpl`), ni
+cabeceras, ni ningún otro binario del producto. El `.gitignore` los excluye a
+propósito. Para compilar esto hace falta una copia de Delphi con su propia
+licencia, obtenida por cuenta de quien lo use. Lo que se publica son unidades
+en Object Pascal que *usan* la VCL, igual que cualquier programa escrito para
+ella.
