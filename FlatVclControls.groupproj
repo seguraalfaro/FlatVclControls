@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D5A21717-8262-4E66-A525-4F41F5559A7D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="FlatVclControls.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="dclFlatVclControls.dproj">
+            <Dependencies>FlatVclControls.dproj</Dependencies>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="FlatVclControls">
+        <MSBuild Projects="FlatVclControls.dproj" Targets=""/>
+    </Target>
+    <Target Name="FlatVclControls:Clean">
+        <MSBuild Projects="FlatVclControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FlatVclControls:Make">
+        <MSBuild Projects="FlatVclControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="dclFlatVclControls" DependsOnTargets="FlatVclControls">
+        <MSBuild Projects="dclFlatVclControls.dproj" Targets=""/>
+    </Target>
+    <Target Name="dclFlatVclControls:Clean" DependsOnTargets="FlatVclControls:Clean">
+        <MSBuild Projects="dclFlatVclControls.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="dclFlatVclControls:Make" DependsOnTargets="FlatVclControls:Make">
+        <MSBuild Projects="dclFlatVclControls.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="FlatVclControls;dclFlatVclControls"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="FlatVclControls:Clean;dclFlatVclControls:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="FlatVclControls:Make;dclFlatVclControls:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
