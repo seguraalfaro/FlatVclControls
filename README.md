@@ -196,8 +196,24 @@ producción lo hace bajo su propio criterio y su propia responsabilidad.
 
 ## Reconocimientos y marcas
 
-Todo el código de este repositorio es obra original del autor. No incorpora
-código de terceros.
+Todo el código de este repositorio está escrito por el autor. No se copió de
+otro proyecto ni se adaptó de ningún componente existente.
+
+Si a quien conozca la VCL alguna parte le resulta familiar, es por la forma, no
+por el origen: escribir un componente de VCL obliga a seguir lo que documenta
+Embarcadero, y hay una sola manera de hacer cada cosa. Sobrescribir
+`CreateParams` para tocar los estilos de la ventana, responder a los mensajes
+`CN_` y `CM_` con la sintaxis `message`, declarar las propiedades en `published`
+para que el Object Inspector las vea, enlazar con `TActionList` desde
+`ActionChange`, registrar con `RegisterComponents`. Eso no es código de nadie:
+es la interfaz que hay que cumplir para que el IDE y la VCL traten a la clase
+como un componente.
+
+Lo mismo vale para las técnicas documentadas de la API de Windows. Que
+`TFlatWinButton` pinte su rótulo con `BS_OWNERDRAW` y `CN_DRAWITEM` es el
+procedimiento que describe la documentación de Windows para un botón dibujado
+por el dueño, y es por donde pasa también `TBitBtn`, porque no hay otra puerta.
+Coincide el camino; el dibujo, los nombres y la estructura son propios.
 
 Delphi, RAD Studio, la VCL y Embarcadero son marcas registradas de Embarcadero
 Technologies, Inc. **Este proyecto no está afiliado a Embarcadero, ni
